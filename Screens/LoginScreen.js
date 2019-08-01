@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import {
     View,
     Text,
@@ -6,6 +6,9 @@ import {
 } from 'react-native';
 
 const LoginScreen = () => {
+    static navigationOptions = {
+        header: null;
+    }
     return (
         <View>
             <Text>Hello World</Text>
