@@ -1,21 +1,24 @@
-import React from 'react';
+import React, {Component} from "react";
 import {
     View,
     Text,
-    StyleSheet
+    StyleSheet,
+    ImageBackground
 } from 'react-native';
 
-const LoginScreen = () => {
-    // static navigationOptions = {
-    //     header: null;
-    // }
-    return (
-        <View>
-            <Text>Hello World</Text>
-        </View>
-    );
-};
-
+class LoginScreen extends Component{
+    static navigationOptions = {
+        header: null
+    }
+    render(){
+        return (
+            <View style={{ flex: 1 }}>
+                <ImageBackground></ImageBackground>
+            </View>
+        );
+    }
+}
+export default LoginScreen;
 
 const styles = StyleSheet.create({
     container: {
