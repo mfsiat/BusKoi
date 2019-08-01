@@ -6,9 +6,9 @@ import {
 } from 'react-native';
 
 const LoginScreen = () => {
-    static navigationOptions = {
-        header: null;
-    }
+    // static navigationOptions = {
+    //     header: null;
+    // }
     return (
         <View>
             <Text>Hello World</Text>
