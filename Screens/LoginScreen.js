@@ -30,7 +30,9 @@ class LoginScreen extends Component{
         Animated.timing(this.loginHeight,{
             toValue: SCREEN_HEIGHT,
             duration: 500
-        }).start()
+        }).start(()=>{
+            this.refs.textInputMobile.focus()
+        })
     }
 
     decreaseHeightOfLogin = () =>{
@@ -73,6 +75,25 @@ class LoginScreen extends Component{
                     >
                         <Icon name="arrow-left" style={{color:'black'}}/>
                     </TouchableOpacity>
+                </Animated.View>
+
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        height: 60,
+                        width: 60,
+                        right: 10,
+                        bottom: 10, // animated
+                        opacity: 1, // animated
+                        zIndex: 100,
+                        backgroundColor: '#54575e',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        borderRadius: 30
+                    }}
+                >
+                    <Icon name="arrow-right" style={{color: 'white'}} />
+
                 </Animated.View>
 
                 <ImageBackground 
@@ -150,6 +171,7 @@ class LoginScreen extends Component{
                                                 paddingHorizontal: 10
                                             }}>+880</Text>
                                         <TextInput
+                                        ref="textInputMobile"
                                             style={{
                                                 flex: 1,
                                                 fontSize: 20
