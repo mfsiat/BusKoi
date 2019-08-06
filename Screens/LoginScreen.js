@@ -131,6 +131,19 @@ class LoginScreen extends Component{
             outputRange: [0,1]
         })
 
+        const titleTextLeft = this.loginHeight.interpolate({
+            inputRange: [150, SCREEN_HEIGHT],
+            outputRange: [100, 25]
+        })
+        const titleTextBottom = this.loginHeight.interpolate({
+            inputRange: [150,400, SCREEN_HEIGHT],
+            outputRange: [0,0, 100]
+        })
+        const titleTextOpacity = this.loginHeight.interpolate({
+            inputRange: [150, SCREEN_HEIGHT],
+            outputRange: [0, 1]
+        })
+
         return (
             <View style={{ flex: 1 }}>
 
@@ -235,7 +248,7 @@ class LoginScreen extends Component{
                                             opacity:titleTextOpacity
                                         }}
                                     >
-
+                                        Enter Your Mobile Number
                                     </Animated.Text>
                                     <Image source={require('../assets/bd.png')}
                                     style={{
