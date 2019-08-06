@@ -23,7 +23,7 @@ class LoginScreen extends Component{
                         alignItems:'center'
                     }}>
                         <View style={{
-                            backgroundColor: 'Yellow',
+                            backgroundColor: 'white',
                             height: 100, 
                             width: 100, 
                             alignItems: 'center',
@@ -32,7 +32,6 @@ class LoginScreen extends Component{
                         <Text style={{fontWeight: 'bold', fontSize: 26}}>
                             BusKoi
                         </Text>
-
                         </View>
                     </View>
                 </ImageBackground>
