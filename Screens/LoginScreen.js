@@ -5,7 +5,8 @@ import {
     StyleSheet,
     ImageBackground,
     TextInput,
-    TouchableOpacity
+    TouchableOpacity,
+    Image
 } from 'react-native';
 
 class LoginScreen extends Component{
@@ -57,6 +58,46 @@ class LoginScreen extends Component{
                                     Where is the Bus!
                                 </Text>
                             </View>
+                            
+                            <TouchableOpacity>
+                                <View
+                                    style={{
+                                        marginTop: 25, //animated
+                                        paddingHorizontal: 25,
+                                        flexDirection: 'row'
+                                    }}
+                                >
+                                    <Image source={require('../assets/bd.png')}
+                                    style={{
+                                        height: 24,
+                                        width: 24, 
+                                        resizeMode: 'contain'
+                                    }}
+                                    />
+                                    <View
+                                    style={{
+                                        flexDirection: 'row',
+                                        flex: 1
+                                    }}
+                                    >
+                                        <Text
+                                            style={{
+                                                fontSize: 20,
+                                                paddingHorizontal: 10
+                                            }}
+                                        >+880</Text>
+                                        <TextInput
+                                            style={{
+                                                flex: 1,
+                                                fontSize: 20
+                                            }}
+                                            placeholder="Enter your mobile number"
+                                            underlineColorAndroid="transparent"
+                                        />
+                                    </View>
+                                </View>
+                            </TouchableOpacity>
+
                         </View>
 
                         {/* Footer */}
