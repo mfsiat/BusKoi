@@ -8,7 +8,9 @@ import {
     TouchableOpacity,
     Image,
     Animated,
-    Dimensions
+    Dimensions,
+    Keyboard,
+    Platform
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -21,12 +23,83 @@ class LoginScreen extends Component{
         header: null
     }
 
+    constructor(){
+        super()
+
+        this.state ={
+            placeholderText: 'Enter Your Mobile Number'
+        }
+    }
+
     componentWillMount() {
         // we place default value of a perticuler layout
         this.loginHeight = new Animated.Value(150)
+
+        this.keyboardWillShowListener = Keyboard.addListener('keyboardWillShow', this.keyboardWillShow)
+        this.keyboardWillHideListener = Keyboard.addListener('keyboardWillHide', this.keyboardWillHide)
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', this.keyboardWillShow)
+        this.keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', this.keyboardWillHide)
+
+        this.keyboardHeight = new Animated.Value(0)
+        this.forwardArrowOpacity = new Animated.Value(0)
+        this.borderBottomWidth = new Animated.Value(0)
+    }
+
+    keyboardWillShow = (event) => {
+
+        if(Platform.OS == 'android'){
+            duration = 100
+        }
+        else{
+            duration = event.duration
+        }
+
+
+        Animated.parallel([
+            Animated.timing(this.keyboardHeight, {
+                duration: duration + 100,
+                toValue: event.endCoordinates.height + 10
+            }),
+            Animated.timing(this.forwardArrowOpacity, {
+                duration: duration,
+                toValue: 1
+            }),
+            Animated.timing(this.borderBottomWidth, {
+                duration: duration,
+                toValue: 1
+            })
+
+        ]).start()
+    }
+
+    keyboardWillHide = (event) => {
+
+        if(Platform.OS == 'android'){
+            duration = 100
+        }
+        else{
+            duration = event.duration
+        }
+
+        Animated.parallel([
+            Animated.timing(this.keyboardHeight, {
+                duration: duration + 100,
+                toValue: 0
+            }),
+            Animated.timing(this.forwardArrowOpacity, {
+                duration: duration,
+                toValue: 0
+            }),
+            Animated.timing(this.borderBottomWidth, {
+                duration: duration,
+                toValue: 0
+            })
+
+        ]).start()        
     }
 
     increaseHeightOfLogin = () =>{
+        this.setState({placeholderText:'1234567890'})
         Animated.timing(this.loginHeight,{
             toValue: SCREEN_HEIGHT,
             duration: 500
@@ -36,6 +109,7 @@ class LoginScreen extends Component{
     }
 
     decreaseHeightOfLogin = () =>{
+        Keyboard.dismiss()
         Animated.timing(this.loginHeight,{
             toValue: 150,
             duration: 500
@@ -84,7 +158,7 @@ class LoginScreen extends Component{
                         width: 60,
                         right: 10,
                         bottom: 10, // animated
-                        opacity: 1, // animated
+                        opacity: this.forwardArrowOpacity, // animated
                         zIndex: 100,
                         backgroundColor: '#54575e',
                         alignItems: 'center',
@@ -144,13 +218,25 @@ class LoginScreen extends Component{
                             <TouchableOpacity
                                 onPress = {()=>this.increaseHeightOfLogin()}
                             >
-                                <View
+                                <Animated.View
                                     style={{
-                                        marginTop: 25, //animated
+                                        marginTop: marginTop, //animated
                                         paddingHorizontal: 25,
                                         flexDirection: 'row'
                                     }}
                                 >
+                                    <Animated.Text
+                                        style={{
+                                            fontSize:24,
+                                            color:'gray',
+                                            position: 'absolute',
+                                            bottom:titleTextBottom,
+                                            left:titleTextLeft,
+                                            opacity:titleTextOpacity
+                                        }}
+                                    >
+
+                                    </Animated.Text>
                                     <Image source={require('../assets/bd.png')}
                                     style={{
                                         height: 24,
@@ -158,11 +244,12 @@ class LoginScreen extends Component{
                                         resizeMode: 'contain'
                                     }}
                                     />
-                                    <View
+                                    <Animated.View
                                     pointerEvents="none"
                                     style={{
                                         flexDirection: 'row',
-                                        flex: 1
+                                        flex: 1,
+                                        borderBottomWidth: this.borderBottomWidth
                                     }}
                                     >
                                         <Text
@@ -171,16 +258,17 @@ class LoginScreen extends Component{
                                                 paddingHorizontal: 10
                                             }}>+880</Text>
                                         <TextInput
+                                        keyboardType="numeric"
                                         ref="textInputMobile"
                                             style={{
                                                 flex: 1,
                                                 fontSize: 20
                                             }}
-                                            placeholder="Enter your mobile number"
+                                            placeholder={this.state.placeholderText}
                                             underlineColorAndroid="transparent"
                                         />
-                                    </View>
-                                </View>
+                                    </Animated.View>
+                                </Animated.View>
                             </TouchableOpacity>
 
                         </Animated.View>
