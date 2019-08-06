@@ -37,8 +37,24 @@ class LoginScreen extends Component{
                     {/* Bottom Half */}
                     <View>
 
-                        <View>
-                            
+                        <View
+                            style={{
+                                height: 150,
+                                backgroundColor: 'white'
+                            }}
+                        >
+                            <View
+                                style={{
+                                    opacity: 1, //animated
+                                    alignItems: 'flex-start',
+                                    paddingHorizontal: 25,
+                                    marginTop: 25 // animated
+                                }}
+                            >
+                                <Text style={{ fontSize: 24 }}>
+                                    Where is the Bus!
+                                </Text>
+                            </View>
                         </View>
 
                         {/* Footer */}
@@ -49,7 +65,7 @@ class LoginScreen extends Component{
                             alignItems: 'flex-start',
                             justifyContent: 'center',
                             borderTopColor: '#e8e8ec',
-                            borderWidth: 1,
+                            borderTopWidth: 1,
                             paddingHorizontal: 25
                         }}
                         >
