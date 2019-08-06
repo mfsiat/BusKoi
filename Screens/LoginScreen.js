@@ -34,12 +34,19 @@ class LoginScreen extends Component{
                         </Text>
                         </View>
                     </View>
+                    {/* Bottom Half */}
                     <View>
+
+                        <View>
+                            
+                        </View>
+
+                        {/* Footer */}
                         <View
                         style={{
                             height: 70,
                             backgroundColor: 'white',
-                            alignItems: 'center',
+                            alignItems: 'flex-start',
                             justifyContent: 'center',
                             borderTopColor: '#e8e8ec',
                             borderWidth: 1,
