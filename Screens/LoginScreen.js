@@ -3,7 +3,9 @@ import {
     View,
     Text,
     StyleSheet,
-    ImageBackground
+    ImageBackground,
+    TextInput,
+    TouchableOpacity
 } from 'react-native';
 
 class LoginScreen extends Component{
