@@ -33,6 +33,13 @@ class LoginScreen extends Component{
         }).start()
     }
 
+    decreaseHeightOfLogin = () =>{
+        Animated.timing(this.loginHeight,{
+            toValue: 150,
+            duration: 500
+        }).start()
+    }
+
     render(){
 
         const headerTextOpacity = this.loginHeight.interpolate({
@@ -64,7 +71,7 @@ class LoginScreen extends Component{
                     <TouchableOpacity
                         onPress={() => this.decreaseHeightOfLogin()}
                     >
-                        <Icon name="arrow-backward" style={{color:'black'}}/>
+                        <Icon name="arrow-left" style={{color:'black'}}/>
                     </TouchableOpacity>
                 </Animated.View>
 
