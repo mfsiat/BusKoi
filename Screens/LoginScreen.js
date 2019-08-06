@@ -64,7 +64,7 @@ class LoginScreen extends Component{
                     <TouchableOpacity
                         onPress={() => this.decreaseHeightOfLogin()}
                     >
-                        <Icon name="arrow-back" style={{color:'black'}}/>
+                        <Icon name="arrow-backward" style={{color:'black'}}/>
                     </TouchableOpacity>
                 </Animated.View>
 
