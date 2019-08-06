@@ -38,10 +38,20 @@ class LoginScreen extends Component{
                         <View
                         style={{
                             height: 70,
-                            backgroundColor: 'white'
+                            backgroundColor: 'white',
+                            alignItems: 'center',
+                            justifyContent: 'center',
+                            borderTopColor: '#e8e8ec',
+                            borderWidth: 1,
+                            paddingHorizontal: 25
                         }}
                         >
-                            <Text>
+                            <Text
+                            style={{
+                                color: '#5a7fdf',
+                                fontWeight: 'bold'
+                            }}
+                            >
                                 Or connect using a social account
                             </Text>
                         </View>
