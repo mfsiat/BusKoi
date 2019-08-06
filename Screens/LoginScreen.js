@@ -6,18 +6,68 @@ import {
     ImageBackground,
     TextInput,
     TouchableOpacity,
-    Image
+    Image,
+    Animated,
+    Dimensions
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/FontAwesome';
+
+const SCREEN_HEIGHT = Dimensions.get('window').height;
 import * as Animatable from 'react-native-animatable';
 
 class LoginScreen extends Component{
     static navigationOptions = {
         header: null
     }
+
+    componentWillMount() {
+        // we place default value of a perticuler layout
+        this.loginHeight = new Animated.Value(150)
+    }
+
+    increaseHeightOfLogin = () =>{
+        Animated.timing(this.loginHeight,{
+            toValue: SCREEN_HEIGHT,
+            duration: 500
+        }).start()
+    }
+
     render(){
+
+        const headerTextOpacity = this.loginHeight.interpolate({
+            inputRange: [150, SCREEN_HEIGHT],
+            outputRange: [1,0]
+        })
+        const marginTop = this.loginHeight.interpolate({
+            inputRange: [150, SCREEN_HEIGHT],
+            outputRange: [25,100]
+        })
+        const headerBackArrowOpacity = this.loginHeight.interpolate({
+            inputRange: [150, SCREEN_HEIGHT],
+            outputRange: [0,1]
+        })
+
         return (
             <View style={{ flex: 1 }}>
+
+                <Animated.View
+                    style={{
+                        position: 'absolute',
+                        height: 60, width: 60,
+                        top: 60,
+                        left: 25,
+                        zIndex: 100,
+                        opacity: headerBackArrowOpacity
+                    }}
+                >
+                    <TouchableOpacity
+                        onPress={() => this.decreaseHeightOfLogin()}
+                    >
+                        <Icon name="arrow-back" style={{color:'black'}}/>
+                    </TouchableOpacity>
+                </Animated.View>
+
                 <ImageBackground 
                     source={require('../assets/loginScreen.png')}
                     style={{ flex: 1 }}
@@ -27,7 +77,9 @@ class LoginScreen extends Component{
                         justifyContent:'center',
                         alignItems:'center'
                     }}>
-                        <View style={{
+                        <Animatable.View
+                        animation="zoomIn" iterationCount={1}
+                        style={{
                             backgroundColor: 'white',
                             height: 100, 
                             width: 100, 
@@ -37,31 +89,33 @@ class LoginScreen extends Component{
                         <Text style={{fontWeight: 'bold', fontSize: 26}}>
                             BusKoi
                         </Text>
-                        </View>
+                        </Animatable.View>
                     </View>
                     {/* Bottom Half */}
-                    <View>
+                    <Animatable.View animation="slideInUp" iterationCount={1}>
 
-                        <View
+                        <Animated.View
                             style={{
-                                height: 150,
+                                height: this.loginHeight,
                                 backgroundColor: 'white'
                             }}
                         >
-                            <View
+                            <Animated.View
                                 style={{
-                                    opacity: 1, //animated
+                                    opacity: headerTextOpacity, //animated
                                     alignItems: 'flex-start',
                                     paddingHorizontal: 25,
-                                    marginTop: 25 // animated
+                                    marginTop: marginTop // animated
                                 }}
                             >
                                 <Text style={{ fontSize: 24 }}>
                                     Where is the Bus!
                                 </Text>
-                            </View>
+                            </Animated.View>
                             
-                            <TouchableOpacity>
+                            <TouchableOpacity
+                                onPress = {()=>this.increaseHeightOfLogin()}
+                            >
                                 <View
                                     style={{
                                         marginTop: 25, //animated
@@ -77,6 +131,7 @@ class LoginScreen extends Component{
                                     }}
                                     />
                                     <View
+                                    pointerEvents="none"
                                     style={{
                                         flexDirection: 'row',
                                         flex: 1
@@ -86,8 +141,7 @@ class LoginScreen extends Component{
                                             style={{
                                                 fontSize: 20,
                                                 paddingHorizontal: 10
-                                            }}
-                                        >+880</Text>
+                                            }}>+880</Text>
                                         <TextInput
                                             style={{
                                                 flex: 1,
@@ -100,7 +154,7 @@ class LoginScreen extends Component{
                                 </View>
                             </TouchableOpacity>
 
-                        </View>
+                        </Animated.View>
 
                         {/* Footer */}
                         <View
@@ -123,7 +177,7 @@ class LoginScreen extends Component{
                                 Or connect using a social account
                             </Text>
                         </View>
-                    </View>
+                    </Animatable.View>
                 </ImageBackground>
             </View>
         );
