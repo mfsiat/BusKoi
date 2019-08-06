@@ -34,6 +34,16 @@ class LoginScreen extends Component{
                         </Text>
                         </View>
                     </View>
+                    <View>
+                        <View
+                        style={{
+                            height: 70,
+                            backgroundColor: 'white'
+                        }}
+                        >
+
+                        </View>
+                    </View>
                 </ImageBackground>
             </View>
         );
