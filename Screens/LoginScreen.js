@@ -9,6 +9,8 @@ import {
     Image
 } from 'react-native';
 
+import * as Animatable from 'react-native-animatable';
+
 class LoginScreen extends Component{
     static navigationOptions = {
         header: null
