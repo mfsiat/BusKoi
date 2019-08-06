@@ -41,7 +41,9 @@ class LoginScreen extends Component{
                             backgroundColor: 'white'
                         }}
                         >
-
+                            <Text>
+                                Or connect using a social account
+                            </Text>
                         </View>
                     </View>
                 </ImageBackground>
