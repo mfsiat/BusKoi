@@ -1,23 +1,9 @@
-import React, {Fragment} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
-import {
-  Header,
-  LearnMoreLinks,
-  Colors,
-  DebugInstructions,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
+import React from 'react';
+import { StyleSheet } from 'react-native';
 
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import LoginScreen from './Screens/LoginScreen'; 
+import MapScreen from './Screens/MapScreen';
 
 export default class App extends React.Component {
   render() {
@@ -28,7 +14,8 @@ export default class App extends React.Component {
 }
 
 const AppStackNavigator = createStackNavigator({
-  Home: LoginScreen
+  Home: LoginScreen,
+  Map: MapScreen
 });
 
 const AppContainer = createAppContainer(AppStackNavigator);

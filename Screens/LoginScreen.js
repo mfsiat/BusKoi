@@ -180,7 +180,7 @@ class LoginScreen extends Component{
                         borderRadius: 30
                     }}
                 >
-                    <Icon name="arrow-right" style={{color: 'white'}}/>
+                    <Icon name="arrow-right" style={{color: 'white'}} onPress={() => this.props.navigation.navigate('Map')}/>
 
                 </Animated.View>
 
