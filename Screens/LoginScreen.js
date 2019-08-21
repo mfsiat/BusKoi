@@ -14,6 +14,7 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
+import MapScreen from '../Screens/MapScreen'
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 import * as Animatable from 'react-native-animatable';
@@ -179,7 +180,7 @@ class LoginScreen extends Component{
                         borderRadius: 30
                     }}
                 >
-                    <Icon name="arrow-right" style={{color: 'white'}} />
+                    <Icon name="arrow-right" style={{color: 'white'}} onPress={()=>navigation.navigate('MapScreen')}/>
 
                 </Animated.View>
 
