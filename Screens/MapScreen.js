@@ -255,6 +255,7 @@ const MapScreen = () => {
         provider={PROVIDER_GOOGLE}
         style={styles.map}
         showsUserLocation
+        showsCompass
         initialRegion={currentPosition}
         customMapStyle={mapStyle}
       >
