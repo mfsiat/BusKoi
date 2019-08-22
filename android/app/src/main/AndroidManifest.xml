@@ -2,7 +2,7 @@
   package="com.buskoi">
 
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <application
       android:name=".MainApplication"
       android:label="@string/app_name"
@@ -27,5 +27,4 @@
             <!-- android:value="AIzaSyCNWkAVaczJ9Xr-5VKOVBX52UFy_gC1kqE" /> -->
             
     </application>
-      <uses-permission android:name="android.permission.ACCES_FINE_LOCATION" />
 </manifest>
