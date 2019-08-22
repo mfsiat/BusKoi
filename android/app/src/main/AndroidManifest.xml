@@ -27,5 +27,5 @@
             <!-- android:value="AIzaSyCNWkAVaczJ9Xr-5VKOVBX52UFy_gC1kqE" /> -->
             
     </application>
-      
+      <uses-permission android:name="android.permission.ACCES_FINE_LOCATION" />
 </manifest>
