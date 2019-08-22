@@ -12,8 +12,8 @@ import Geolocation from "react-native-geolocation-service";
 const initialState = {
   latitude: null,
   longitude: null,
-  latitudeDelta: 0.0922,
-  longitudeDelta: 0.0421
+  latitudeDelta: 0.0422,
+  longitudeDelta: 0.0121
 };
 
 const MapScreen = () => {
@@ -26,8 +26,8 @@ const MapScreen = () => {
         const { longitude, latitude } = position.coords;
         setCurentPosition({
           ...currentPosition,
-          latitude: 23.810331,
-          longitude: 90.412521
+          latitude,
+          longitude
         });
       },
       error => alert(error.message),
@@ -254,6 +254,7 @@ const MapScreen = () => {
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
+        showsUserLocation
         initialRegion={currentPosition}
         customMapStyle={mapStyle}
       >
@@ -265,7 +266,51 @@ const MapScreen = () => {
           }}
           onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
           title={"Test Marker"}
-          description={"This is a description of the marker"}
+          description={"This is My Location"}
+        />
+
+        {/* Sample Bus */}
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.816848, 
+            longitude: 90.411673
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"বলাকা"}
+          description={"This is a Bus"}
+        />
+
+        {/* Another Bus */}
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.818551, 
+            longitude: 90.414581
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"Airport Poribohon"}
+          description={"This is a Bus"}
+        />
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.813184, 
+            longitude: 90.421080
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"রাঈদা"}
+          description={"This is a Bus"}
+        />
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.820619, 
+            longitude: 90.420461
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"উইনার"}
+          description={"This is a Bus"}
         />
       </MapView>
     </View>
