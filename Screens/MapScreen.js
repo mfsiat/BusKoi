@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Geolocation from "react-native-geolocation-service";
+import SearchBox from "./Components/SearchBox";
 
 const initialState = {
   latitude: null,
@@ -314,12 +315,15 @@ const MapScreen = () => {
           description={"This is a Bus"}
         />
       </MapView>
+      <SearchBox/>
     </View>
   ) : (
     <ActivityIndicator style={{ flex: 1 }} animating size="large" />
   );
 };
 
+
+// StyleSheet
 const styles = StyleSheet.create({
   container: {
     position: "absolute",
