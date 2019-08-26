@@ -299,14 +299,16 @@ class LoginScreen extends Component{
                             paddingHorizontal: 25
                         }}
                         >
-                            <Text
-                            style={{
-                                color: '#5a7fdf',
-                                fontWeight: 'bold'
-                            }}
-                            >
-                                Or connect using a social account
-                            </Text>
+                            <TouchableOpacity>
+                                <Text
+                                style={{
+                                    color: '#5a7fdf',
+                                    fontWeight: 'bold'
+                                }}
+                                >
+                                    Or connect using a social account
+                                </Text>
+                            </TouchableOpacity>
                         </View>
                     </Animatable.View>
                 </ImageBackground>
