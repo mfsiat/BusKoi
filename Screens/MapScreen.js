@@ -289,7 +289,7 @@ const MapScreen = () => {
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.mapButton}
-          onPress={ () => this.showLocationButton()}
+          onPress={ () => this.nativeEvent.useEffect()}
         >
           <Text 
           style={{fontWeight: 'bold', color: 'black'}} 
