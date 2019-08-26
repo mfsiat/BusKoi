@@ -18,6 +18,17 @@ const styles = {
         color: "#7D7D7D"
     },
     leftContainer:{
-        
+        flexWrap: 'wrap',
+        alignItems: 'flex-start',
+        borderLeftColor: '#7D7D7D',
+    },
+    leftIcon:{
+        fontSize:20,
+        color:"#7D7D7D"
+    },
+    distance:{
+        fontSize:12
     }
-}
+};
+
+export default styles;
