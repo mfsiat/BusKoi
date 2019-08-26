@@ -13,7 +13,14 @@ export const SearchBox = () =>{
                 <Text style={styles.label}>Where To?</Text>
                 <InputGroup>
                     <Icon name="search" size={15} color="#FF5E3A" />
-                    <Input style={styles.inputSearch} placeholder="Pick Up Location"></Input>
+                    <Input style={styles.inputSearch} placeholder="From"></Input>
+                </InputGroup>
+            </View>
+            <View style={styles.inputWrapper}>
+                <Text style={styles.label}>Where To?</Text>
+                <InputGroup>
+                    <Icon name="search" size={15} color="#FF5E3A" />
+                    <Input style={styles.inputSearch} placeholder="To"></Input>
                 </InputGroup>
             </View>
         </View>
