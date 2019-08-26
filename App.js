@@ -4,6 +4,7 @@ import { StyleSheet } from 'react-native';
 import {createStackNavigator, createAppContainer} from 'react-navigation';
 import LoginScreen from './Screens/LoginScreen'; 
 import MapScreen from './Screens/MapScreen';
+import SingupScreen from './Screens/SingupScreen';
 
 import * as firebase from "firebase";
 
@@ -30,7 +31,8 @@ export default class App extends React.Component {
 
 const AppStackNavigator = createStackNavigator({
   Home: LoginScreen,
-  Map: MapScreen
+  Map: MapScreen,
+  SingUp: SingupScreen
 });
 
 const AppContainer = createAppContainer(AppStackNavigator);

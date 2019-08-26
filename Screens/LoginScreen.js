@@ -14,7 +14,6 @@ import {
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/FontAwesome';
-import MapScreen from '../Screens/MapScreen'
 
 const SCREEN_HEIGHT = Dimensions.get('window').height;
 import * as Animatable from 'react-native-animatable';
@@ -299,7 +298,7 @@ class LoginScreen extends Component{
                             paddingHorizontal: 25
                         }}
                         >
-                            <TouchableOpacity>
+                            <TouchableOpacity onPress={() => this.props.navigation.navigate('SingUp')}>
                                 <Text
                                 style={{
                                     color: '#5a7fdf',
