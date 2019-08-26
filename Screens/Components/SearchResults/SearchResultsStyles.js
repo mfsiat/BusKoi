@@ -2,10 +2,10 @@ import { Dimensions } from "react-native";
 var width = Dimensions.get("window").width;
 const styles = {
     searchResultsWrapper:{
-        top: 158,
+        top: 220,
         position: "absolute",
         width: width,
-        height: 100,
+        height: 1000,
         backgroundColor: "#fff",
         opacity: 0.9
     },
@@ -18,9 +18,9 @@ const styles = {
         color: "#7D7D7D"
     },
     leftContainer:{
-        flexWrap: 'wrap',
-        alignItems: 'flex-start',
-        borderLeftColor: '#7D7D7D',
+        flexWrap: "wrap",
+        alignItems: "flex-start",
+        borderLeftColor: "#7D7D7D",
     },
     leftIcon:{
         fontSize:20,
