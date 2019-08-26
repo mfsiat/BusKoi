@@ -12,24 +12,61 @@ import {
   Label
 } from "native-base";
 
+import * as firebase from "firebase";
+
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyAyQZZBUJu4qYkN10Rxhpbkz3_vGp3MZZ0",
+  authDomain: "bus-koi.firebaseapp.com",
+  databaseURL: "https://bus-koi.firebaseio.com",
+  projectId: "bus-koi",
+  storageBucket: "bus-koi.appspot.com",
+  messagingSenderId: "1087900522203",
+  appId: "1:1087900522203:web:576d113b86a14018"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+
 export default class SingupScreen extends Component {
 
   constructor(props) {
-          super(props)
+    super(props)
 
-          this.state = ({
-            email: '',
-            password: ''
-          })
+    this.state = ({
+    email: '',
+    password: ''
+    })
   }
 
-  singUpUser = (email,password) => {
+  singUpUser = (email, password) => {
+    try {
+        if(this.state.password.length < 6) {
+            alert("Please enter atLeast 6 characters")
+            return;
+        }
 
+        firebase.auth().createUserWithEmailAndPassword(email, password)
+    }
+    catch (error) {
+        console.log(error.toString())
+    }
   }
 
   loginUser = (email, password) => {
-
+    try {
+        firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
+            console.log(user)
+        })
+    }
+    catch(error){
+        console.log(error.toString())
+    }
   }
+
+//   async loginWithFacebook() {
+//       const {type,token} = await Expo.Facebook.lo
+//   }
 
 
   render() {
@@ -49,6 +86,7 @@ export default class SingupScreen extends Component {
               secureTextEntry={true}
               autoCorrect={false}
               autoCapitalize="none"
+              onChangeText={(password) => this.setState({password})}
             />
           </Item>
           <Button style={{ marginTop: 10 }} 
@@ -67,6 +105,14 @@ export default class SingupScreen extends Component {
         >
             <Text style={{ color: 'white' }} >Sing-Up</Text>
           </Button>
+          {/* <Button style={{ marginTop: 10 }} 
+            full 
+            rounded 
+            primary
+            onPress = {()=> }
+        >
+            <Text style={{ color: 'white' }} >Login With Facebook</Text>
+          </Button> */}
         </Form>
       </Container>
     );
