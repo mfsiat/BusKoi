@@ -255,7 +255,7 @@ const MapScreen = () => {
     }
   ];
 
-
+  // Main Code map integration starts from here
   return currentPosition.latitude ? (
     <View style={styles.container}>
       <MapView
@@ -326,7 +326,7 @@ const MapScreen = () => {
       </MapView>
       {/* searchbox to search location  */}
       <SearchBox/> 
-      <SearchResults/>
+      {/* <SearchResults/> */}
     </View>
   ) : (
     <ActivityIndicator style={{ flex: 1 }} animating size="large" />
