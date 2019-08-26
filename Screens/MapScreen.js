@@ -9,7 +9,8 @@ import {
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Geolocation from "react-native-geolocation-service";
 import SearchBox from "./Components/SearchBox";
-import { Button } from "native-base";
+import SearchResults from "./Components/SearchResults";
+
 
 const initialState = {
   latitude: null,
@@ -364,7 +365,9 @@ const MapScreen = () => {
           description={"This is a Bus"}
         />
       </MapView>
-      <SearchBox/>
+      {/* searchbox to search location  */}
+      <SearchBox/> 
+      <SearchResults/>
     </View>
   ) : (
     <ActivityIndicator style={{ flex: 1 }} animating size="large" />
