@@ -1,12 +1,16 @@
 import React from "react";
-import {View, Text} from "react-native";
+import {Text} from "react-native";
+import { View, InputGroup, Input } from "native-base";
 
 import styles from "./SearchBoxStyles.js";
 
 export const SearchBox = () =>{
     return(
-        <View>
-
+        <View style={styles.searchBox}>
+            <Text style={styles.label}>Where To?</Text>
+            <InputGroup>
+                <Input style={styles.inputSearch} placeholder="Pick Up Location"></Input>
+            </InputGroup>
         </View>
     );
 }
