@@ -37,34 +37,6 @@ const MapScreen = () => {
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   }, []);
-
-
-  // showLocationButton(() => {
-  //   Geolocation.getCurrentPosition(
-  //     position => {
-  //       // alert(JSON.stringify(position))
-  //       const { longitude, latitude } = position.coords;
-  //       setCurentPosition({
-  //         ...currentPosition,
-  //         latitude,
-  //         longitude
-  //       });
-
-  //       _mapView.animateToCoordinate(
-  //         {
-  //           latitude: this.state.latitude,
-  //           longitude: this.state.longitude
-  //         }, 1000
-  //       )
-  //     },
-  //     error => alert(error.message),
-  //     { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
-  //   );
-  // }, []);
-
-
-
-
   // Custom MapStyles
 
   var mapStyle = [
@@ -286,19 +258,6 @@ const MapScreen = () => {
 
   return currentPosition.latitude ? (
     <View style={styles.container}>
-      {/* <View>
-        <TouchableOpacity
-          activeOpacity={0.7}
-          style={styles.mapButton}
-          onPress={ () => this.nativeEvent.useEffect()}
-        >
-          <Text 
-          style={{fontWeight: 'bold', color: 'black'}} 
-          >
-            Find me!
-          </Text>
-        </TouchableOpacity>
-      </View> */}
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
