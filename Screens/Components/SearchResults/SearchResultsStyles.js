@@ -10,6 +10,14 @@ const styles = {
         opacity: 0.9
     },
     primaryText:{
+        fontWeight: "bold",
+        color: "#373737"
+    },
+    secondaryText:{
+        fontSize: "italic",
+        color: "#7D7D7D"
+    },
+    leftContainer:{
         
     }
 }
