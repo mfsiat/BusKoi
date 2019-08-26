@@ -37,6 +37,9 @@ const MapScreen = () => {
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   }, []);
+
+
+
   // Custom MapStyles
 
   var mapStyle = [
