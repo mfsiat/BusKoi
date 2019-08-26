@@ -29,6 +29,9 @@ export default class SingupScreen extends Component {
               autoCapitalize="none"
             />
           </Item>
+          <Button style={{ marginTop: 10 }} full rounded success>
+            <text>Login</text>
+          </Button>
         </Form>
       </Container>
     );
@@ -39,6 +42,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    justifyContent: "center"
+    justifyContent: "center",
+    padding: 10
   }
 });
