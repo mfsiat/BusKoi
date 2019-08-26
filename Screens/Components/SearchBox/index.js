@@ -9,11 +9,13 @@ import styles from "./SearchBoxStyles.js";
 export const SearchBox = () =>{
     return(
         <View style={styles.searchBox}>
-            <Text style={styles.label}>Where To?</Text>
-            <InputGroup>
-                <Icon name="search" size={15} color="#FF5E3A" />
-                <Input style={styles.inputSearch} placeholder="Pick Up Location"></Input>
-            </InputGroup>
+            <View style={styles.inputWrapper}>
+                <Text style={styles.label}>Where To?</Text>
+                <InputGroup>
+                    <Icon name="search" size={15} color="#FF5E3A" />
+                    <Input style={styles.inputSearch} placeholder="Pick Up Location"></Input>
+                </InputGroup>
+            </View>
         </View>
     );
 }

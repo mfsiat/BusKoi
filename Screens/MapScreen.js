@@ -3,12 +3,13 @@ import {
   StyleSheet,
   Text,
   View,
-  TextInput,
+  TouchableOpacity,
   ActivityIndicator
 } from "react-native";
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Geolocation from "react-native-geolocation-service";
 import SearchBox from "./Components/SearchBox";
+import { Button } from "native-base";
 
 const initialState = {
   latitude: null,
@@ -35,6 +36,10 @@ const MapScreen = () => {
       { enableHighAccuracy: true, timeout: 15000, maximumAge: 10000 }
     );
   }, []);
+
+
+  // Custom MapStyles
+
   var mapStyle = [
     {
       elementType: "geometry",
@@ -250,15 +255,28 @@ const MapScreen = () => {
       ]
     }
   ];
+
+
   return currentPosition.latitude ? (
     <View style={styles.container}>
+      <View>
+        <Button
+          activeOpacity={0.7}
+          style={styles.mapButton}
+        >
+          <Text style={{fontWeight: 'bold', color: 'black'}}>Find me!</Text>
+        </Button>
+      </View>
       <MapView
         provider={PROVIDER_GOOGLE}
         style={styles.map}
-        showsUserLocation
-        showsCompass
         initialRegion={currentPosition}
         customMapStyle={mapStyle}
+        showsUserLocation
+        showsMyLocationButton={true}
+        showsTraffic={true}
+        showsCompass={true}
+        rotateEnabled={true}
       >
         <Marker
           draggable
@@ -340,7 +358,20 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0
-  }
+  },
+  mapButton: {
+    width: 75,
+    height: 75,
+    borderRadius: 85/2,
+    backgroundColor: 'rgba(252, 253, 253, 0.9)',
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: 'black',
+    shadowRadius: 8,
+    shadowOpacity: 0.12,
+    opacity: .6,
+    zIndex: 10,
+ }
 });
 
 export default MapScreen;
