@@ -24,10 +24,10 @@ const AppStackNavigator = createStackNavigator({
   Map: MapScreen,
   SingUp: SingupScreen,
   LoadingScreen: LoadingScreen,
-  ProfileScreen: ProfileScreen,
-  SettingsScreen: SettingsScreen,
-  BusListScreen: BusListScreen,
-  HomeScreen: HomeScreen
+  Profile: ProfileScreen,
+  Settings: SettingsScreen,
+  BusList: BusListScreen,
+  Home: HomeScreen
 });
 
 const AppContainer = createAppContainer(AppStackNavigator);
