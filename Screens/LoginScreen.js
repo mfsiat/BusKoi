@@ -10,7 +10,8 @@ import {
   Animated,
   Dimensions,
   Keyboard,
-  Platform
+  Platform,
+  StatusBar
 } from "react-native";
 
 import Icon from "react-native-vector-icons/FontAwesome";
@@ -184,7 +185,7 @@ class LoginScreen extends Component {
           <Icon
             name="arrow-right"
             style={{ color: "white" }}
-            onPress={() => this.props.navigation.navigate("Map")}
+            onPress={() => this.props.navigation.navigate("LoadingScreen")}
           />
         </Animated.View>
 

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { StyleSheet, View, Text } from "react-native";
 
+
 import {
   Container,
   Content,
@@ -39,6 +40,14 @@ export default class SingupScreen extends Component {
     })
   }
 
+  // componentDidMount(){
+  //   firebase.auth().onAuthStateChanged((user) => {
+  //     if(user != null) {
+  //       console.log(user)
+  //     }
+  //   })
+  // }
+
   singUpUser = (email, password) => {
     try {
         if(this.state.password.length < 6) {
@@ -56,7 +65,7 @@ export default class SingupScreen extends Component {
   loginUser = (email, password) => {
     try {
         firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
-            // console.log(user)
+            console.log(user)
             
         })
     }
@@ -65,9 +74,7 @@ export default class SingupScreen extends Component {
     }
   }
 
-//   async loginWithFacebook() {
-//       const {type,token} = await Expo.Facebook.lo
-//   }
+
 
 
   render() {
@@ -106,14 +113,14 @@ export default class SingupScreen extends Component {
         >
             <Text style={{ color: 'white' }} >Sing-Up</Text>
           </Button>
-          {/* <Button style={{ marginTop: 10 }} 
+          <Button style={{ marginTop: 10 }} 
             full 
             rounded 
             primary
-            onPress = {()=> }
+            onPress = {()=> this.props.navigation.navigate('LoadingScreen')}
         >
             <Text style={{ color: 'white' }} >Login With Facebook</Text>
-          </Button> */}
+          </Button>
         </Form>
       </Container>
     );
