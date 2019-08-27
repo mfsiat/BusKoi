@@ -56,7 +56,8 @@ export default class SingupScreen extends Component {
   loginUser = (email, password) => {
     try {
         firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
-            console.log(user)
+            // console.log(user)
+            
         })
     }
     catch(error){
