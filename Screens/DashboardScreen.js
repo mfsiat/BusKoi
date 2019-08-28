@@ -22,13 +22,8 @@ export default class DashboardScreen extends Component {
     }
 }
 
-
-const FeedStack = createStackNavigator({
-    Feed: Feed
-})
-
 const DashboardTabNavigator = createBottomTabNavigator({
-    FeedStack,
+    Feed,
     Profile: ProfileScreen,
     BusList: BusListScreen
 })
