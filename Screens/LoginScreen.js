@@ -305,7 +305,7 @@ class LoginScreen extends Component {
               }}
             >
               <TouchableOpacity
-                onPress={() => this.props.navigation.navigate("SingUp")}
+                onPress={() => this.props.navigation.navigate("SignupScreen")}
               >
                 <Text
                   style={{
@@ -313,7 +313,7 @@ class LoginScreen extends Component {
                     fontWeight: "bold"
                   }}
                 >
-                  Or connect using a social account
+                  Or Sing-Up using Email 
                 </Text>
               </TouchableOpacity>
             </View>

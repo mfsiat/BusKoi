@@ -8,7 +8,7 @@ import {
 
 import LoginScreen from './Screens/LoginScreen'; 
 import MapScreen from './Screens/MapScreen';
-import SingupScreen from './Screens/SingupScreen';
+import SignupScreen from './Screens/SignupScreen';
 import LoadingScreen from './Screens/LoadingScreen';
 import ProfileScreen from './Screens/ProfileScreen';
 import BusListScreen from './Screens/BusListScreen';
@@ -27,7 +27,7 @@ export default class App extends React.Component {
 const AppStackNavigator = createStackNavigator({
   Home: LoginScreen,
   Map: MapScreen,
-  SingUp: SingupScreen,
+  SignupScreen: SignupScreen,
   LoadingScreen: LoadingScreen,
   Profile: ProfileScreen,
   Settings: SettingsScreen,

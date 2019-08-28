@@ -29,7 +29,7 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 
-export default class SingupScreen extends Component {
+export default class SignupScreen extends Component {
 
   constructor(props) {
     super(props)
@@ -39,14 +39,6 @@ export default class SingupScreen extends Component {
     password: ''
     })
   }
-
-  // componentDidMount(){
-  //   firebase.auth().onAuthStateChanged((user) => {
-  //     if(user != null) {
-  //       console.log(user)
-  //     }
-  //   })
-  // }
 
   singUpUser = (email, password) => {
     try {
@@ -65,17 +57,14 @@ export default class SingupScreen extends Component {
   loginUser = (email, password) => {
     try {
         firebase.auth().signInWithEmailAndPassword(email,password).then(function(user){
-            console.log(user)
-            
+            // console.log(user)
+            alert("Logged in!!")
         })
     }
     catch(error){
         console.log(error.toString())
     }
   }
-
-
-
 
   render() {
     return (

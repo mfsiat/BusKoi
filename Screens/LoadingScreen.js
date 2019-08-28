@@ -15,7 +15,8 @@ export default class LoadingScreen extends Component {
                 this.props.navigation.navigate('Dashboard')
             }
             else{
-                this.props.navigation.navigate('SignUp')
+                this.props.navigation.navigate('SignupScreen')
+                alert("Error not Logged In!!")
             }
         })
     }
