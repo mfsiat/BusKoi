@@ -23,6 +23,7 @@ export default class App extends React.Component {
   }
 }
 
+// route configs
 const AppStackNavigator = createStackNavigator({
   Home: LoginScreen,
   Map: MapScreen,
