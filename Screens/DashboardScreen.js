@@ -4,8 +4,7 @@ import {
     createAppContainer, 
     createDrawerNavigator, 
     createSwitchNavigator,
-    createBottomTabNavigator,
-    createStackNavigator
+    createBottomTabNavigator
  } from 'react-navigation'
 
 import ProfileScreen from './ProfileScreen'

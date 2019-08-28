@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import {
   StyleSheet,
-  Text,
   View,
   TouchableOpacity,
   ActivityIndicator
@@ -9,7 +8,7 @@ import {
 import MapView, { Marker, PROVIDER_GOOGLE } from "react-native-maps";
 import Geolocation from "react-native-geolocation-service";
 import SearchBox from "./Components/SearchBox";
-import SearchResults from "./Components/SearchResults";
+// import SearchResults from "./Components/SearchResults";
 
 
 const initialState = {

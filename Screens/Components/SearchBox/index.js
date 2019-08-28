@@ -10,19 +10,19 @@ export const SearchBox = () =>{
     return(
         <View style={styles.searchBox}>
             <View style={styles.inputWrapper}>
-                <Text style={styles.label}>Where To?</Text>
+                <Text style={styles.label}>Search For Buses</Text>
                 <InputGroup>
                     <Icon name="search" size={15} color="#FF5E3A" />
-                    <Input style={styles.inputSearch} placeholder="From"></Input>
+                    <Input style={styles.inputSearch} placeholder="Enter Bus Name"></Input>
                 </InputGroup>
             </View>
-            <View style={styles.inputWrapper}>
+            {/* <View style={styles.inputWrapper}>
                 <Text style={styles.label}>Where To?</Text>
                 <InputGroup>
                     <Icon name="search" size={15} color="#FF5E3A" />
                     <Input style={styles.inputSearch} placeholder="To"></Input>
                 </InputGroup>
-            </View>
+            </View> */}
         </View>
     );
 }

@@ -113,14 +113,14 @@ export default class SingupScreen extends Component {
         >
             <Text style={{ color: 'white' }} >Sing-Up</Text>
           </Button>
-          <Button style={{ marginTop: 10 }} 
+          {/* <Button style={{ marginTop: 10 }} 
             full 
             rounded 
             primary
             onPress = {()=> this.props.navigation.navigate('LoadingScreen')}
         >
             <Text style={{ color: 'white' }} >Login With Facebook</Text>
-          </Button>
+          </Button> */}
         </Form>
       </Container>
     );
