@@ -35,10 +35,3 @@ const AppStackNavigator = createStackNavigator({
 });
 
 const AppContainer = createAppContainer(AppStackNavigator);
-const styles = StyleSheet.create({
-  container: {
-      flex: 1,
-      alignItems: 'center',
-      justifyContent: 'center'
-  }
-});
