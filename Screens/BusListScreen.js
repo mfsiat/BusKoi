@@ -31,39 +31,46 @@ export default class BusListScreen extends Component {
 
   componentDidMount() {
     firebase.database().ref().child('/').once('value', snapshot => {
-        // alert(JSON.stringify(snapshot.val()))
+        alert(JSON.stringify(snapshot.val()))
         // const data = snapshot.val()
-        if(snapshot.val()) {
-            const initMessages = [];
-            Object.keys(snapshot.val()).forEach(busList => initMessages.push(data[busList]));
-            this.setState({
-                busLists: initMessages
-            })
-        }
-    })
+        // if(snapshot.val()) {
+        //     const initMessages = [];
+        //     Object.keys(snapshot.val()).forEach(busList => initMessages.push(data[busList]));
+        //     this.setState({
+        //         busLists: initMessages 
+        //     })
+        // }
+    });
 
     firebase.database().ref().child('/').on("child_added", snapshot =>{
-        // alert(JSON.stringify(snapshot.val()))
-        // const data = snapshot.val()
-        if(snapshot.val()) {
-            this.setState(prevState => ({
-                busLists: [snapshot.val(), ...prevState.busLists]
-            }))
-        }
-    })
+        alert(JSON.stringify(snapshot.val()))
+        // // const data = snapshot.val()
+        // if(snapshot.val()) {
+        //     this.setState(prevState => ({
+        //         busLists: [snapshot.val(), ...prevState.busLists]
+        //     }))
+        // }
+    });
+
+    
   }
 
   render() {
     return (
-      <View >
-        <View >
+      <View style={styles.container}>
+        <View style={styles.msgBox}>
           <FlatList
-            data = {this.state.busLists}
-            renderItem = {({item}) => (
-                <View>
-                    <Text>{item}</Text>
+            data = {[
+              {key: 'Ajmeri'},{key: 'AshulilaClassic'}, {key: 'Balaka'},{key: 'Raida'}               
+            ]}
+            renderItem = {
+              ({item}) => 
+                <View style={styles.listItemContainer}>
+                    <Text style={styles.listItem}>
+                      {item.key}
+                    </Text>
                 </View>   
-            )}
+            }
           />
         </View>
       </View>

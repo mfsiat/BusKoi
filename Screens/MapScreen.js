@@ -325,6 +325,36 @@ const MapScreen = () => {
           title={"উইনার"}
           description={"This is a Bus"}
         />
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.815973,  
+            longitude: 90.424800
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"NSU Bus 01"}
+          description={"Seat Counter = 00:35"}
+        />
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.813043,   
+            longitude: 90.430352
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"NSU Bus 02"}
+          description={"Seat Counter = 00:35"}
+        />
+        <Marker
+          draggable
+          coordinate={{
+            latitude: 23.816390,    
+            longitude: 90.430062
+          }}
+          onDragEnd={e => alert(JSON.stringify(e.nativeEvent.coordinate))}
+          title={"NSU Bus 03"}
+          description={"Seat Counter = 00:35"}
+        />
       </MapView>
       {/* searchbox to search location  */}
       <SearchBox/> 
