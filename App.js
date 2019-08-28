@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
 
-import {createStackNavigator, createAppContainer} from 'react-navigation';
+import {createStackNavigator, createAppContainer, createDrawerNavigator} from 'react-navigation';
 
 import LoginScreen from './Screens/LoginScreen'; 
 import MapScreen from './Screens/MapScreen';
