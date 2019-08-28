@@ -22,35 +22,22 @@ export default class DashboardScreen extends Component {
     }
 }
 
+
+const FeedStack = createStackNavigator({
+    Feed: Feed
+})
+
 const DashboardTabNavigator = createBottomTabNavigator({
-    Feed,
+    FeedStack,
     Profile: ProfileScreen,
     BusList: BusListScreen
-},
-{
-    navigationOptions: ({ navigation }) => {
-        const { routeName } = navigation.state.routes[navigation.state.index];
-        return {
-            headerTitle: routeName
-        };
-    }
-}
-)
+})
 
 const AppDrawerNavigator = createDrawerNavigator({
     Dashboard: DashboardTabNavigator,
     Map: MapScreen,
     Settings: SettingsScreen
-},
-{
-    unmountInactiveRoutes: true,
-    defaultNavigationOptions: {
-        headerStyle: {
-            
-        }
-    }
-}
-)
+},{ unmountInactiveRoutes: true})
 
 const AppSwitchNavigator = createSwitchNavigator({
     Dashboard: AppDrawerNavigator
