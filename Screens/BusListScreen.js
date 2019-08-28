@@ -23,23 +23,33 @@ if (!firebase.apps.length) {
 export default class BusListScreen extends Component {
   constructor(props) {
       super(props);
-
       this.state = ({
           busList: '',
           busLists: []
       })
   }
 
-
   componentDidMount() {
-    firebase.database().ref().child('/busLists').once('value', snapshot => {
+    firebase.database().ref().child('/').once('value', snapshot => {
         // alert(JSON.stringify(snapshot.val()))
-        const data = snapshot.val()
-        
+        // const data = snapshot.val()
+        if(snapshot.val()) {
+            const initMessages = [];
+            Object.keys(snapshot.val()).forEach(busList => initMessages.push(data[busList]));
+            this.setState({
+                busLists: initMessages
+            })
+        }
     })
 
-    firebase.database().ref().child('/busLists').on("child_added", snapshot =>{
+    firebase.database().ref().child('/').on("child_added", snapshot =>{
         // alert(JSON.stringify(snapshot.val()))
+        // const data = snapshot.val()
+        if(snapshot.val()) {
+            this.setState(prevState => ({
+                busLists: [snapshot.val(), ...prevState.busLists]
+            }))
+        }
     })
   }
 
@@ -48,11 +58,11 @@ export default class BusListScreen extends Component {
       <View >
         <View >
           <FlatList
-            data={this.state.data}
-            renderItem={({ item }) => (
-              <View>
-                <Text>{item}</Text>
-              </View>
+            data = {this.state.busLists}
+            renderItem = {({item}) => (
+                <View>
+                    <Text>{item}</Text>
+                </View>   
             )}
           />
         </View>
