@@ -29,7 +29,7 @@ build/
 .gradle
 local.properties
 *.iml
-java_pid12596.hprof
+android/java_pid12596.hprof
 # node.js
 #
 node_modules/
