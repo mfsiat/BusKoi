@@ -1,7 +1,7 @@
 # OSX
 #
 .DS_Store
-
+java_pid12596.hprof
 # Xcode
 #
 build/
@@ -29,7 +29,7 @@ build/
 .gradle
 local.properties
 *.iml
-/android/java_pid12596.hprof
+
 # node.js
 #
 node_modules/
