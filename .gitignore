@@ -3,7 +3,7 @@
 .DS_Store
 # Xcode
 #
-android/app/build
+android/app/build/
 build/
 *.pbxuser
 !default.pbxuser
