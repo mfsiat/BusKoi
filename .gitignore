@@ -1,7 +1,7 @@
 # OSX
 #
 .DS_Store
-android/*.java_pid12596.hprof
+*.java_pid12596.hprof
 # Xcode
 #
 build/
