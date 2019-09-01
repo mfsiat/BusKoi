@@ -10,4 +10,4 @@ Our technical contributions include a microcontroller, a GPS module, a Wi-Fi con
 **The main purpose of the BUS Koi application is to reduce the waiting time the hassle for getting on time at the bus stop. In our report, we are presenting a comparatively more productive solution for the user. This is will let the user cut their long waiting time at the bus stop. The user can see the bus location with our app from their home and the user can decide according to the location of the bus when he or she needs to get to the bus stop. This will cut down the huge amount of waiting time a user spent on his or her everyday life. In the meantime, the user can spend time doing something else. **
 
 ## Demo 
-![]()
+![](https://github.com/mfsiat/BusKoi/blob/master/assets/sample.gif)
