@@ -4,6 +4,7 @@
 # Xcode
 #
 android/app/build/
+android/app/src/main/AndroidManifest.xml
 build/
 *.pbxuser
 !default.pbxuser
