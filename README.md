@@ -1,13 +1,9 @@
 # BusKoi 
 
-## Abstract 
-Location-based service has become popular nowadays. GPS location data give us accessibility to do many things. Among these things, location tracking is very popular. Real-time location tracking is gaining popularity day by day. Location data can be used for personal and commercial use. We can discover a various unknown location with the GPS data as well as location serviced companies can give us location- based services by accessing our location and can give the user a better experience for the user’s need. In our project, we have used the location service to give the user location and route tracking for local transit service. Users can easily track the location of the selected route transit so that he or she can use the transit service time efficiently and can reduce his or her wait time that he or she had to waste due to waiting for the transit service. In our project, we will be tracking the bus location to give our user the location guidance. 
-Users have to install an application on the smartphone, which will give the user the bus location, and there will be another GPS device installed on the transit Bus that will repeatedly give our server the location of the bus and with the smartphone application, users can view the bus’s live location. Our GPS device sends anonymized location updates to the server
+## What is it? 
+Bus koi is an application which shows it's users public transportation location and the available seats in it via a **IOT** device that is installed on the bus. By seeing the bus location and the availabale seats on it the user can decide which bus the user should get in and whether the user should wait for the bus or not. This application can save the users time by reaching the bus-stop on the right time and by not waiting for the bus for long time. 
 
-Our technical contributions include a microcontroller, a GPS module, a Wi-Fi connector, and a power source. For the smartphone application, our Android application can be run on any android device. The GPS location data goes to our local server and then it is fetched from our mobile application and the user can view the bus location under the specific routes. For every route, there is some selected bus service that only goes to those routes, so when the user selects the route the bus on that route will be shown with the live location so that the user can make sure of the arrival time of the bus. This can reduce the mean wait time of the user on serious traffic conditions. 
-
-
-**The main purpose of the BUS Koi application is to reduce the waiting time the hassle for getting on time at the bus stop. In our report, we are presenting a comparatively more productive solution for the user. This is will let the user cut their long waiting time at the bus stop. The user can see the bus location with our app from their home and the user can decide according to the location of the bus when he or she needs to get to the bus stop. This will cut down the huge amount of waiting time a user spent on his or her everyday life. In the meantime, the user can spend time doing something else**
+People will know from their home whether the bus is available or not. By seeing the location of the bus the user could easily get to the bus stop at the right time. 
 
 ## Demo 
 ![](https://github.com/mfsiat/BusKoi/blob/master/assets/sample.gif)
