@@ -1,6 +1,12 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, ImageBackground } from 'react-native'
-
+import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+/**
+ *
+ *
+ * @export
+ * @class Feed
+ * @extends {Component}
+ */
 export default class Feed extends Component {
     render() {
         return (
