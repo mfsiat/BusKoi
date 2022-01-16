@@ -1,20 +1,25 @@
 import React from 'react';
-import {} from 'react-native';
-
+import { } from 'react-native';
 import {
-  createStackNavigator,
-  createAppContainer
+  createAppContainer, createStackNavigator
 } from 'react-navigation';
-
-import LoginScreen from './Screens/LoginScreen'; 
-import MapScreen from './Screens/MapScreen';
-import SignupScreen from './Screens/SignupScreen';
-import LoadingScreen from './Screens/LoadingScreen';
-import ProfileScreen from './Screens/ProfileScreen';
 import BusListScreen from './Screens/BusListScreen';
-import SettingsScreen from './Screens/SettingsScreen';
 import DashboardScreen from './Screens/DashboardScreen';
+import LoadingScreen from './Screens/LoadingScreen';
+import LoginScreen from './Screens/LoginScreen';
+import MapScreen from './Screens/MapScreen';
+import ProfileScreen from './Screens/ProfileScreen';
+import SettingsScreen from './Screens/SettingsScreen';
+import SignupScreen from './Screens/SignupScreen';
 
+
+/**
+ *
+ *
+ * @export
+ * @class App
+ * @extends {React.Component}
+ */
 export default class App extends React.Component {
   render() {
     return (
@@ -23,7 +28,7 @@ export default class App extends React.Component {
   }
 }
 
-// route configs
+/** @type {*} */
 const AppStackNavigator = createStackNavigator({
   Home: LoginScreen,
   Map: MapScreen,
